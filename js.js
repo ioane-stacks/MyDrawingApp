@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    $(document).on('contextmenu', function(e) {
+    $(document).on('contextmenu', function (e) {
         return false;
     });
 
@@ -23,23 +23,23 @@ $(document).ready(function () {
         }
     });
 
-    $('.openClose').hover(function(){
-        if($('.controlBox').width() == 320) {
-            $(this).css({'margin-right': '2px'});
+    $('.openClose').hover(function () {
+        if ($('.controlBox').width() == 320) {
+            $(this).css({ 'margin-right': '2px' });
         }
     }, function () {
-        if($('.controlBox').width() == 320) {
-            $(this).css({'margin-right': '-2px'});
+        if ($('.controlBox').width() == 320) {
+            $(this).css({ 'margin-right': '-2px' });
         }
     });
 
-    $('.openClose').hover(function(){
-        if($('.controlBox').width() == 30) {
-            $(this).css({'margin-right': '-2px'});
+    $('.openClose').hover(function () {
+        if ($('.controlBox').width() == 30) {
+            $(this).css({ 'margin-right': '-2px' });
         }
     }, function () {
-        if($('.controlBox').width() == 30) {
-            $(this).css({'margin-right': '2px'});
+        if ($('.controlBox').width() == 30) {
+            $(this).css({ 'margin-right': '2px' });
         }
     });
 
@@ -52,6 +52,7 @@ $(document).ready(function () {
 
     var n = 5.5;
     var i = 0;
+    var j = 0;
 
     var deg = 0;
 
@@ -73,32 +74,32 @@ $(document).ready(function () {
         $('.n1').remove();
     })
     var Transparency = 0.5;
-    $('#objTransparency').on('input', function() {
+    $('#objTransparency').on('input', function () {
         Transparency = $(this).val();
     })
 
-    $('#clearDesk').on('click', function() {
+    $('#clearDesk').on('click', function () {
         $('.n1').remove();
     });
 
     var Rounded = 50;
-    $('#objRounded').on('input', function() {
+    $('#objRounded').on('input', function () {
         Rounded = $(this).val();
     });
 
-    
+
     var Rotation = 1;
-    $('.objRotation').on('input', function() {
+    $('.objRotation').on('input', function () {
         Rotation = $('input:checked').val();
     });
 
     var objGradient = 1;
-    $('.objGradient').on('input', function() {
+    $('.objGradient').on('input', function () {
         objGradient = $('input:checked').val();
     });
 
     var objShadow = 2;
-    $('.objShadowed').on('input', function() {
+    $('.objShadowed').on('input', function () {
         objShadow = $('input:checked').val();
     })
 
@@ -135,12 +136,15 @@ $(document).ready(function () {
         }
 
 
-        if(Rotation == 1) {
+        if (Rotation == 1) {
             deg = x;
         }
         else {
             deg = 0;
         }
+
+
+
 
 
         if (isPressed == true) {
@@ -151,7 +155,7 @@ $(document).ready(function () {
             }
 
             Gradient = `radial-gradient(rgba(${X},0,${Y},${Transparency}), rgba(${Y},0,${X},${Transparency})`;
-            if(objGradient == 1){
+            if (objGradient == 1) {
                 Gradient = `radial-gradient(rgba(${X},0,${Y},${Transparency}), rgba(${Y},0,${X},${Transparency})`;
             }
             else {
@@ -159,7 +163,7 @@ $(document).ready(function () {
             }
 
             Shadowed = 'none';
-            if(objShadow == 1) {
+            if (objShadow == 1) {
                 Shadowed = '0 0 5px white';
             }
             else {
@@ -184,6 +188,10 @@ $(document).ready(function () {
             });
         }
 
+
+
+
+
         $('body').css({ 'background-image': `linear-gradient(to right, rgb(${X}, ${k}, ${Y}), rgb(${Y}, ${k}, ${X} )` });
 
         $(`.obj${i - objLength}`).remove();
@@ -191,8 +199,5 @@ $(document).ready(function () {
 
         //console.log(X + ', ' + Y + ', ' + k + ',');
     }
-
-
-
 
 });
