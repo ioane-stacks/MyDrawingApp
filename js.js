@@ -113,8 +113,8 @@ $(document).ready(function () {
 
 
     $('body').on('mousemove', function (e) {
-        //Animate(e.pageX, e.pageY, isPressed);
-        //$('.obj').css({ 'left': `${e.pageX - 50}px`, 'top': `${e.pageY - 50}px` });
+        Animate(e.pageX, e.pageY, isPressed);
+        $('.obj').css({ 'left': `${e.pageX - 50}px`, 'top': `${e.pageY - 50}px` });
     });
 
 
